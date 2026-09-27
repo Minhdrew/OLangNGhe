@@ -1,0 +1,69 @@
+/* Background images for cells */
+#dan-0-0 {
+    background-image: url('banh_trang_1790484627708.png');
+    background-size: cover;
+    background-position: center;
+}
+#dan-0-1 {
+    background-image: url('muoi_1790484643472.png');
+    background-size: cover;
+    background-position: center;
+}
+#dan-0-2 {
+    background-image: url('lo_lu_1790484659052.png');
+    background-size: cover;
+    background-position: center;
+}
+#dan-0-3 {
+    background-image: url('lu_dong_1790484674158.png');
+    background-size: cover;
+    background-position: center;
+}
+#dan-0-4 {
+    background-image: url('nhang_1790484685488.png');
+    background-size: cover;
+    background-position: center;
+}
+#dan-1-0 {
+    background-image: url('heo_dat_1790484698027.png');
+    background-size: cover;
+    background-position: center;
+}
+
+#dan-1-1 { /* Gốm Lái Thiêu */
+    background-image: url('https://image.pollinations.ai/prompt/Traditional%20Vietnamese%20ceramic%20village%2C%20artisans%20painting%20blue%20patterns%20on%20bowls%2C%20vintage%20art%20style?width=300&height=300&nologo=true&seed=1');
+    background-size: cover; background-position: center;
+}
+#dan-1-2 { /* Bánh tét bắp */
+    background-image: url('https://image.pollinations.ai/prompt/Traditional%20Vietnamese%20cylindrical%20sticky%20corn%20rice%20cake%20wrapped%20in%20banana%20leaves%2C%20vintage%20art%20style?width=300&height=300&nologo=true&seed=2');
+    background-size: cover; background-position: center;
+}
+#dan-1-3 { /* Dệt Bảy Hiền */
+    background-image: url('https://image.pollinations.ai/prompt/Traditional%20Vietnamese%20weaving%20village%2C%20wooden%20looms%2C%20colorful%20silk%20threads%2C%20vintage%20art%20style?width=300&height=300&nologo=true&seed=3');
+    background-size: cover; background-position: center;
+}
+#dan-1-4 { /* Guốc mộc */
+    background-image: url('https://image.pollinations.ai/prompt/Traditional%20Vietnamese%20wooden%20clogs%20workshop%2C%20carving%20wood%2C%20vintage%20art%20style?width=300&height=300&nologo=true&seed=4');
+    background-size: cover; background-position: center;
+}
+#quan-0 { /* Đình Thông Tây Hội */
+    background-image: url('https://image.pollinations.ai/prompt/Traditional%20Vietnamese%20communal%20house%2C%20grand%20wooden%20architecture%2C%20red%20tile%20roof%2C%20vintage%20art%20style?width=300&height=300&nologo=true&seed=5');
+    background-size: cover; background-position: center;
+}
+#quan-1 { /* Đình Phú Long */
+    background-image: url('https://image.pollinations.ai/prompt/Traditional%20Vietnamese%20communal%20house%2C%20dragon%20motifs%2C%20lanterns%2C%20vintage%20art%20style?width=300&height=300&nologo=true&seed=6');
+    background-size: cover; background-position: center;
+}
+
+.cell-title {
+    background: rgba(253, 245, 230, 0.85);
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin-top: 2px;
+}
+
+.quan-title {
+    background: rgba(253, 245, 230, 0.85);
+    border-radius: 5px;
+    padding: 5px;
+}

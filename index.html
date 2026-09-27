@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ô làng nghề - Gieo hạt di sản</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style_append.css">
+</head>
+<body>
+    <div class="game-container">
+        <header class="game-header">
+            <h1>Ô Làng Nghề<span>Gieo hạt di sản</span></h1>
+            <div class="turn-indicator" id="turn-indicator">Lượt của Người chơi 1</div>
+            <div class="score-board">
+                <div class="player-score player1">
+                    <input type="text" id="p1-name" class="player-name-input" value="Người chơi 1" onchange="updateUI()">
+                    <span class="score" id="score-p1">0</span>
+                </div>
+                <div class="player-score player2">
+                    <span class="score" id="score-p2">0</span>
+                    <input type="text" id="p2-name" class="player-name-input" value="Người chơi 2" onchange="updateUI()">
+                </div>
+            </div>
+        </header>
+
+        <main class="board-wrapper">
+            <div class="board">
+                <!-- Quan bên trái -->
+                <div class="quan left" id="quan-0" onclick="handleQuanClick(0)">
+                    <div class="quan-title">ĐÌNH THÔNG TÂY HỘI</div>
+                    <div class="pieces-container" id="quan-0-pieces"></div>
+                    <div class="piece-count" id="quan-0-count">0</div>
+                </div>
+
+                <!-- 10 Ô Dân -->
+                <div class="dan-grid">
+                    <!-- Hàng trên -->
+                    <div class="dan-row top-row" id="row-0">
+                        <div class="dan cell-top" id="dan-0-0" onclick="handleDanClick(0, 0)">
+                            <div class="cell-title">Bánh tráng Phú Hòa Đông</div>
+                            <div class="pieces-container" id="dan-0-0-pieces"></div>
+                            <div class="piece-count" id="dan-0-0-count">0</div>
+                        </div>
+                        <div class="dan cell-top" id="dan-0-1" onclick="handleDanClick(0, 1)">
+                            <div class="cell-title">Muối Long Điền</div>
+                            <div class="pieces-container" id="dan-0-1-pieces"></div>
+                            <div class="piece-count" id="dan-0-1-count">0</div>
+                        </div>
+                        <div class="dan cell-top" id="dan-0-2" onclick="handleDanClick(0, 2)">
+                            <div class="cell-title">Lò lu Đại Hưng</div>
+                            <div class="pieces-container" id="dan-0-2-pieces"></div>
+                            <div class="piece-count" id="dan-0-2-count">0</div>
+                        </div>
+                        <div class="dan cell-top" id="dan-0-3" onclick="handleDanClick(0, 3)">
+                            <div class="cell-title">Lư đồng An Hội</div>
+                            <div class="pieces-container" id="dan-0-3-pieces"></div>
+                            <div class="piece-count" id="dan-0-3-count">0</div>
+                        </div>
+                        <div class="dan cell-top" id="dan-0-4" onclick="handleDanClick(0, 4)">
+                            <div class="cell-title">Nhang Lê Minh Xuân</div>
+                            <div class="pieces-container" id="dan-0-4-pieces"></div>
+                            <div class="piece-count" id="dan-0-4-count">0</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Hàng dưới -->
+                    <div class="dan-row bottom-row" id="row-1">
+                        <div class="dan cell-bottom" id="dan-1-0" onclick="handleDanClick(1, 0)">
+                            <div class="cell-title">Heo đất Lái Thiêu</div>
+                            <div class="pieces-container" id="dan-1-0-pieces"></div>
+                            <div class="piece-count" id="dan-1-0-count">0</div>
+                        </div>
+                        <div class="dan cell-bottom" id="dan-1-1" onclick="handleDanClick(1, 1)">
+                            <div class="cell-title">Gốm Lái Thiêu</div>
+                            <div class="pieces-container" id="dan-1-1-pieces"></div>
+                            <div class="piece-count" id="dan-1-1-count">0</div>
+                        </div>
+                        <div class="dan cell-bottom" id="dan-1-2" onclick="handleDanClick(1, 2)">
+                            <div class="cell-title">Bánh tét bắp Đất Đỏ</div>
+                            <div class="pieces-container" id="dan-1-2-pieces"></div>
+                            <div class="piece-count" id="dan-1-2-count">0</div>
+                        </div>
+                        <div class="dan cell-bottom" id="dan-1-3" onclick="handleDanClick(1, 3)">
+                            <div class="cell-title">Dệt Bảy Hiền</div>
+                            <div class="pieces-container" id="dan-1-3-pieces"></div>
+                            <div class="piece-count" id="dan-1-3-count">0</div>
+                        </div>
+                        <div class="dan cell-bottom" id="dan-1-4" onclick="handleDanClick(1, 4)">
+                            <div class="cell-title">Guốc mộc Bình Nhâm</div>
+                            <div class="pieces-container" id="dan-1-4-pieces"></div>
+                            <div class="piece-count" id="dan-1-4-count">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quan bên phải -->
+                <div class="quan right" id="quan-1" onclick="handleQuanClick(1)">
+                    <div class="quan-title">ĐÌNH PHÚ LONG</div>
+                    <div class="pieces-container" id="quan-1-pieces"></div>
+                    <div class="piece-count" id="quan-1-count">0</div>
+                </div>
+            </div>
+            
+            <div id="direction-picker" class="hidden">
+                <button class="dir-btn" id="btn-left">Thả sang Trái ⬅</button>
+                <button class="dir-btn" id="btn-right">➡ Thả sang Phải</button>
+            </div>
+        </main>
+
+        <div class="controls">
+            <button id="btn-reset" class="hidden" onclick="initGame()">Chơi Lại</button>
+            <button id="btn-info" onclick="showIntroModal()">Giới thiệu</button>
+        </div>
+    </div>
+
+    <!-- Modal Thông Tin Làng Nghề -->
+    <div id="info-modal" class="modal hidden">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeInfoModal()">&times;</span>
+            <div class="modal-header">
+                <h2 id="modal-title">Tên Làng Nghề</h2>
+            </div>
+            <div class="modal-body">
+                <p id="modal-desc">Thông tin chi tiết về làng nghề sẽ hiện ở đây.</p>
+                <div class="qr-placeholder">
+                    <span>Mã QR quét để xem thêm</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" onclick="closeInfoModal()">Đóng</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Chiến Thắng -->
+    <div id="victory-modal" class="modal hidden">
+        <div class="modal-content victory-bg">
+            <div class="modal-header">
+                <h2 id="victory-title">Chúc mừng!</h2>
+            </div>
+            <div class="modal-body">
+                <p id="victory-desc" style="font-size: 1.5rem; font-weight: bold; color: var(--gold);"></p>
+                <p id="victory-score" style="font-size: 1.2rem; margin-top: 15px; color: var(--text-light);"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-primary" onclick="closeVictoryModal()">Đóng</button>
+                <button class="btn-primary" onclick="initGame(); closeVictoryModal();">Chơi Lại Ngay</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
